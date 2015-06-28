@@ -14,5 +14,8 @@
 @property (nonatomic, readwrite) CGFloat saturationDelta; // default is 1.5
 @property (nonatomic, readwrite) UIColor *tintColor; // default nil
 @property (nonatomic, weak) UIView *viewToBlur; // default is superview
+@property (nonatomic, assign) float updateBlurInterval; //default is 0
+
+- (void) updateBlur;
 
 @end

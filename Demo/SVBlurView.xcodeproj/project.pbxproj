@@ -16,24 +16,11 @@
 		22EF1083181325A900CDF72C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 22EF1081181325A900CDF72C /* Main.storyboard */; };
 		22EF1086181325A900CDF72C /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22EF1085181325A900CDF72C /* ViewController.m */; };
 		22EF1088181325A900CDF72C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 22EF1087181325A900CDF72C /* Images.xcassets */; };
-		22EF108F181325AA00CDF72C /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22EF108E181325AA00CDF72C /* XCTest.framework */; };
-		22EF1090181325AA00CDF72C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22EF106F181325A900CDF72C /* Foundation.framework */; };
-		22EF1091181325AA00CDF72C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22EF1073181325A900CDF72C /* UIKit.framework */; };
 		22EF10AA181326D600CDF72C /* background@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 22EF10A9181326D600CDF72C /* background@2x.png */; };
 		22EF10AE18132FD800CDF72C /* SVBlurView.m in Sources */ = {isa = PBXBuildFile; fileRef = 22EF10AD18132FD800CDF72C /* SVBlurView.m */; };
 		22EF10B01813311700CDF72C /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 22EF10AF1813311700CDF72C /* README.md */; };
 		22EF10BB181336AA00CDF72C /* UIImage+ImageEffects.m in Sources */ = {isa = PBXBuildFile; fileRef = 22EF10BA181336AA00CDF72C /* UIImage+ImageEffects.m */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		22EF1092181325AA00CDF72C /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 22EF1064181325A900CDF72C /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 22EF106B181325A900CDF72C;
-			remoteInfo = SVBlurView;
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		22EF106C181325A900CDF72C /* SVBlurView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SVBlurView.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -50,7 +37,6 @@
 		22EF1084181325A900CDF72C /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		22EF1085181325A900CDF72C /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		22EF1087181325A900CDF72C /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		22EF108D181325AA00CDF72C /* SVBlurViewTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SVBlurViewTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		22EF108E181325AA00CDF72C /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		22EF10A9181326D600CDF72C /* background@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "background@2x.png"; sourceTree = "<group>"; };
 		22EF10AC18132FD800CDF72C /* SVBlurView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVBlurView.h; sourceTree = "<group>"; };
@@ -68,16 +54,6 @@
 				22EF1072181325A900CDF72C /* CoreGraphics.framework in Frameworks */,
 				22EF1074181325A900CDF72C /* UIKit.framework in Frameworks */,
 				22EF1070181325A900CDF72C /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		22EF108A181325AA00CDF72C /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				22EF108F181325AA00CDF72C /* XCTest.framework in Frameworks */,
-				22EF1091181325AA00CDF72C /* UIKit.framework in Frameworks */,
-				22EF1090181325AA00CDF72C /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -99,7 +75,6 @@
 			isa = PBXGroup;
 			children = (
 				22EF106C181325A900CDF72C /* SVBlurView.app */,
-				22EF108D181325AA00CDF72C /* SVBlurViewTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -174,24 +149,6 @@
 			productReference = 22EF106C181325A900CDF72C /* SVBlurView.app */;
 			productType = "com.apple.product-type.application";
 		};
-		22EF108C181325AA00CDF72C /* SVBlurViewTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 22EF10A1181325AA00CDF72C /* Build configuration list for PBXNativeTarget "SVBlurViewTests" */;
-			buildPhases = (
-				22EF1089181325AA00CDF72C /* Sources */,
-				22EF108A181325AA00CDF72C /* Frameworks */,
-				22EF108B181325AA00CDF72C /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				22EF1093181325AA00CDF72C /* PBXTargetDependency */,
-			);
-			name = SVBlurViewTests;
-			productName = SVBlurViewTests;
-			productReference = 22EF108D181325AA00CDF72C /* SVBlurViewTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -200,11 +157,6 @@
 			attributes = {
 				LastUpgradeCheck = 0500;
 				ORGANIZATIONNAME = "Sam Vermette";
-				TargetAttributes = {
-					22EF108C181325AA00CDF72C = {
-						TestTargetID = 22EF106B181325A900CDF72C;
-					};
-				};
 			};
 			buildConfigurationList = 22EF1067181325A900CDF72C /* Build configuration list for PBXProject "SVBlurView" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -220,7 +172,6 @@
 			projectRoot = "";
 			targets = (
 				22EF106B181325A900CDF72C /* SVBlurView */,
-				22EF108C181325AA00CDF72C /* SVBlurViewTests */,
 			);
 		};
 /* End PBXProject section */
@@ -235,13 +186,6 @@
 				22EF10B01813311700CDF72C /* README.md in Resources */,
 				22EF107A181325A900CDF72C /* InfoPlist.strings in Resources */,
 				22EF1083181325A900CDF72C /* Main.storyboard in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		22EF108B181325AA00CDF72C /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -260,22 +204,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		22EF1089181325AA00CDF72C /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		22EF1093181325AA00CDF72C /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 22EF106B181325A900CDF72C /* SVBlurView */;
-			targetProxy = 22EF1092181325AA00CDF72C /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		22EF1078181325A900CDF72C /* InfoPlist.strings */ = {
@@ -395,48 +324,6 @@
 			};
 			name = Release;
 		};
-		22EF10A2181325AA00CDF72C /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/SVBlurView.app/SVBlurView";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-					"$(DEVELOPER_FRAMEWORKS_DIR)",
-				);
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "SVBlurView/SVBlurView-Prefix.pch";
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = "SVBlurViewTests/SVBlurViewTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUNDLE_LOADER)";
-				WRAPPER_EXTENSION = xctest;
-			};
-			name = Debug;
-		};
-		22EF10A3181325AA00CDF72C /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/SVBlurView.app/SVBlurView";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-					"$(DEVELOPER_FRAMEWORKS_DIR)",
-				);
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "SVBlurView/SVBlurView-Prefix.pch";
-				INFOPLIST_FILE = "SVBlurViewTests/SVBlurViewTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUNDLE_LOADER)";
-				WRAPPER_EXTENSION = xctest;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -454,15 +341,6 @@
 			buildConfigurations = (
 				22EF109F181325AA00CDF72C /* Debug */,
 				22EF10A0181325AA00CDF72C /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		22EF10A1181325AA00CDF72C /* Build configuration list for PBXNativeTarget "SVBlurViewTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				22EF10A2181325AA00CDF72C /* Debug */,
-				22EF10A3181325AA00CDF72C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

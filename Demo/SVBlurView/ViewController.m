@@ -20,8 +20,22 @@
     backgroundView.contentMode = UIViewContentModeScaleAspectFill;
     [self.view addSubview:backgroundView];
     
+    UILabel *helloLabel = [[UILabel alloc] initWithFrame:CGRectMake(60, 60, 200, 20)];
+    helloLabel.text = @"SVBlurView";
+    helloLabel.textColor = [UIColor redColor];
+    helloLabel.textAlignment = NSTextAlignmentCenter;
+    helloLabel.font = [UIFont boldSystemFontOfSize:20.f];
+    [backgroundView addSubview:helloLabel];
+    
+    [UIView animateWithDuration:5 delay:0 options:UIViewAnimationOptionAutoreverse|UIViewAnimationOptionRepeat animations:^{
+        helloLabel.frame = CGRectMake(60, 320, 200, 20);
+    } completion:nil];
+    
     SVBlurView *blurView = [[SVBlurView alloc] initWithFrame:CGRectMake(60, 100, 200, 200)];
-    [backgroundView addSubview:blurView];
+    blurView.blurRadius = 5.f;
+    blurView.updateBlurInterval = 1.f/60; //60 fps
+    blurView.viewToBlur = backgroundView;
+    [self.view addSubview:blurView];
 }
 
 @end

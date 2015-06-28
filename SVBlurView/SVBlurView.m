@@ -13,20 +13,41 @@ NSString * const SVBlurViewImageKey = @"SVBlurViewImageKey";
 
 @interface SVBlurView ()
 
+@property (nonatomic, strong) dispatch_source_t updateBlurTimer;
+
 @end
 
 
 @implementation SVBlurView
 
-- (id)initWithFrame:(CGRect)frame {
-    if(self = [super initWithFrame:frame]) {
-        self.blurRadius = 20;
-        self.saturationDelta = 1.5;
-        self.tintColor = nil;
-        self.viewToBlur = nil;
-        self.clipsToBounds = YES;
+- (id)init {
+    if(self = [super init]) {
+        [self setUp];
     }
     return self;
+}
+
+- (id)initWithFrame:(CGRect)frame {
+    if(self = [super initWithFrame:frame]) {
+        [self setUp];
+    }
+    return self;
+}
+
+- (id)initWithCoder:(NSCoder *)aDecoder {
+    if(self = [super initWithCoder:aDecoder]) {
+        [self setUp];
+    }
+    return self;
+}
+
+- (void)setUp {
+    self.blurRadius = 20;
+    self.saturationDelta = 1.5;
+    self.tintColor = nil;
+    self.viewToBlur = nil;
+    self.updateBlurInterval = 0;
+    self.clipsToBounds = YES;
 }
 
 - (void)encodeRestorableStateWithCoder:(NSCoder *)coder {
@@ -47,9 +68,28 @@ NSString * const SVBlurViewImageKey = @"SVBlurViewImageKey";
     return self.superview;
 }
 
+- (void)setUpdateBlurInterval:(float)updateBlurInterval {
+    self.updateBlurTimer = (_updateBlurInterval=updateBlurInterval)>0?CreateDispatchTimer(_updateBlurInterval*NSEC_PER_SEC, 1ull*NSEC_PER_SEC, dispatch_get_main_queue(), ^{ [self updateBlur]; }):nil;
+}
+
+- (void)setUpdateBlurTimer:(dispatch_source_t)updateBlurTimer {
+    if(_updateBlurTimer) dispatch_source_cancel(_updateBlurTimer);
+    if((_updateBlurTimer=updateBlurTimer))
+        dispatch_resume(_updateBlurTimer);
+}
+
+dispatch_source_t CreateDispatchTimer(uint64_t interval, uint64_t leeway, dispatch_queue_t queue, dispatch_block_t block) {
+    dispatch_source_t timer = dispatch_source_create(DISPATCH_SOURCE_TYPE_TIMER, 0, 0, queue);
+    if (timer) {
+        dispatch_source_set_timer(timer, dispatch_walltime(NULL, 0), interval, leeway);
+        dispatch_source_set_event_handler(timer, block);
+    }
+    return timer;
+}
+
 - (void)updateBlur {
     UIGraphicsBeginImageContextWithOptions(self.viewToBlur.bounds.size, NO, 0.0);
-    [self.viewToBlur drawViewHierarchyInRect:self.viewToBlur.bounds afterScreenUpdates:YES];
+    [self.viewToBlur drawViewHierarchyInRect:self.viewToBlur.bounds afterScreenUpdates:NO];
     UIImage *complexViewImage = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();
     
